@@ -41,6 +41,8 @@ GTEST_TEST(QuadraticEquation, Test9_A_is_zero)
 GTEST_TEST(QuadraticEquation, Test13_other_types)
 {
     constexpr const int int_value = 0;
-
     EXPECT_THROW(solve(int_value, int_value, int_value), std::invalid_argument);
+
+    const std::string string_value("0");
+    EXPECT_THROW(solve(string_value, string_value, string_value), std::invalid_argument);
 }
